@@ -21,11 +21,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // Create the window and set the content view. 
     window = NSWindow(
-        contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
+        contentRect: NSRect(x: 0, y: 0, width: 600, height: 300),
         styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
         backing: .buffered, defer: false)
     window.center()
-    window.setFrameAutosaveName("Main Window")
+    window.setFrameAutosaveName("xLogViewer Main Window")
+    window.title = "xLogViewer"
     window.contentView = NSHostingView(rootView: contentView)
     window.makeKeyAndOrderFront(nil)
   }
@@ -34,6 +35,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // Insert code here to tear down your application
   }
 
+  func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+    true
+  }
 
 }
 
