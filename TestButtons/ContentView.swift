@@ -34,10 +34,13 @@ struct ScrollingLogView: View {
         }
       }
     }
+    .foregroundColor(.black)
+    .background(Color(.lightGray))
   }
 }
 
 struct ButtonsView: View {
+  
   var body: some View {
     HStack {
       
@@ -58,6 +61,6 @@ struct ButtonsView: View {
       .frame(width: 100)
       .padding([.horizontal])
     }
-//    .frame(minWidth: 400, idealWidth: 800, maxWidth: 1600, minHeight: 20, idealHeight: 20, maxHeight: 20, alignment: .topLeading)
   }
+
 }
