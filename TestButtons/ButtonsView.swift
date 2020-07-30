@@ -14,19 +14,18 @@ struct ButtonsView: View {
   var body: some View {
     HStack {
       
-      Picker(selection: .constant(4), label: Text("Log Level")) {
-        Text("Error").tag(1)
-        Text("Warning").tag(2)
-        Text("Debug").tag(3)
-        Text("Info").tag(4)
+      Picker(selection: $data.messageLevel, label: Text("Log Level")) {
+        ForEach(LogData.MessageLevel.allCases, id: \.self) {
+          Text($0.rawValue)
+        }
       }
       .frame(width: 150, height: 20)
       .padding([.horizontal], 20)
       
       Spacer()
       HStack {
-        Button(action: {self.data.loadLines()}) {Text("Load")}
-        Button(action: {}) {Text("Save")}
+        Button(action: {self.data.reload = true}) {Text("Load")}
+        Button(action: {self.data.save = true}) {Text("Save")}
       }
       .frame(width: 100)
       .padding([.horizontal], 20)

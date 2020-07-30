@@ -28,3 +28,22 @@ extension FileManager {
     return appFolderUrl
   }
 }
+
+@propertyWrapper struct Toggle {
+
+  private var method : ()->Void
+  var wrappedValue: Bool {
+    didSet {
+      if wrappedValue {
+        method()
+        wrappedValue = false
+      }
+    }
+  }
+  
+  init(wrappedValue: Bool, method: @escaping ()->Void ) {
+    self.wrappedValue = wrappedValue
+    self.method = method
+    
+  }
+}
