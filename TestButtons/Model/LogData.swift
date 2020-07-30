@@ -11,6 +11,8 @@ import SwiftUI
 
 public class LogData: ObservableObject {
   
+  static var defaultLogFile = "xSDR6000.log"
+  
   // ----------------------------------------------------------------------------
   // MARK: - Internal properties
   
@@ -43,6 +45,8 @@ public class LogData: ObservableObject {
     didSet { logLines = filterLog(level: messageLevel, restriction: restriction, restrictionText: restrictionText) }}
   @Published var restrictionText : String = "" {
     didSet { logLines = filterLog(level: messageLevel, restriction: restriction, restrictionText: restrictionText) }}
+  @Published var showTimes = false {
+    didSet { logLines = filterLog(level: messageLevel, restriction: restriction, restrictionText: restrictionText) }}
 
   @Published var logLines = [Line]()
   
@@ -58,7 +62,7 @@ public class LogData: ObservableObject {
   init() {
     
     let appFolder = FileManager.appFolder(for: "net.k3tzr.xsdr6000/Logs")
-    let logUrl = appFolder.appendingPathComponent("xSDR6000.log")
+    let logUrl = appFolder.appendingPathComponent(LogData.defaultLogFile)
     
     let fileManager = FileManager()
     if fileManager.fileExists( atPath: logUrl.path ) {
@@ -79,8 +83,10 @@ public class LogData: ObservableObject {
     openPanel.allowedFileTypes = ["log"]
     openPanel.directoryURL = FileManager.appFolder(for: "net.k3tzr.xsdr6000/Logs")
     
-    if openPanel.runModal() == NSApplication.ModalResponse.OK {
-      readLogFile(url: openPanel.url!)
+    openPanel.beginSheetModal(for: NSApplication.shared.mainWindow!) { [unowned self] response in
+      if response == NSApplication.ModalResponse.OK {
+        self.readLogFile(url: openPanel.url!)
+      }
     }
   }
   
@@ -98,14 +104,10 @@ public class LogData: ObservableObject {
       _allLines.append(Line(id: i, text: lineText ))
     }
     logLines = filterLog(level: messageLevel, restriction: .none)
+    NSApplication.shared.mainWindow?.title = url.lastPathComponent
   }
   
   private func filterLog(level: MessageLevel, restriction: Restriction, restrictionText: String = "") -> [Line] {
-
-
-    print("Restriction = \(restriction.rawValue), \(restrictionText)")
-
-
     var lines = [Line]()
     var limitedLines = [Line]()
     
@@ -123,6 +125,13 @@ public class LogData: ObservableObject {
     case .includes:   limitedLines = lines.filter { $0.text.contains(restrictionText) }
     case .excludes:   limitedLines = lines.filter { !$0.text.contains(restrictionText) }
     }
+    
+    if !showTimes {
+      for (i, line) in limitedLines.enumerated() {
+        let startIndex = line.text.firstIndex(of: "[") ?? line.text.startIndex
+        limitedLines[i].text = String(line.text[startIndex..<line.text.endIndex])
+      }
+    }
     return limitedLines
   }
 
@@ -139,13 +148,13 @@ public class LogData: ObservableObject {
     savePanel.nameFieldStringValue = _openFileUrl?.lastPathComponent ?? ""
     savePanel.directoryURL = desktopUrl
     
-    // if the user pressed Save
-    if savePanel.runModal() == NSApplication.ModalResponse.OK {
-      
-      print("Copy \(_openFileUrl!) to \(savePanel.url!)")
-      
-      let fileManager = FileManager()
-      try! fileManager.copyItem(at: _openFileUrl!, to: savePanel.url!)
+    savePanel.beginSheetModal(for: NSApplication.shared.mainWindow!) { [unowned self] response in
+      if response == NSApplication.ModalResponse.OK {
+        let fileManager = FileManager()
+
+        try? FileManager.default.removeItem(at: savePanel.url!)
+        try! fileManager.copyItem(at: self._openFileUrl!, to: savePanel.url!)
+      }
     }
   }
 }

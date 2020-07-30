@@ -27,7 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         backing: .buffered, defer: false)
     window.center()
     window.setFrameAutosaveName("xLogViewer Main Window")
-    window.title = "xLogViewer"
+    window.title = LogData.defaultLogFile
     window.contentView = NSHostingView(rootView: contentView)
     window.makeKeyAndOrderFront(nil)
   }

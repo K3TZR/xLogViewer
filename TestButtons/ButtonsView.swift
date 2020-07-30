@@ -35,10 +35,13 @@ struct ButtonsView: View {
       
       Spacer()
       HStack {
+        Toggle("Show times", isOn: $data.showTimes)
+          .frame(height: 20, alignment: .center)
+        Spacer()
         Button(action: {self.data.reload = true}) {Text("Load")}
         Button(action: {self.data.save = true}) {Text("Save")}
       }
-      .frame(width: 100)
+      .frame(width: 300)
       .padding([.horizontal], 20)
     }
     .padding([.vertical], 10)
