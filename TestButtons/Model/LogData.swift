@@ -38,7 +38,12 @@ public class LogData: ObservableObject {
   // MARK: - Published properties
   
   @Published var messageLevel : MessageLevel = .debug {
-    didSet { logLines = filterLog(level: messageLevel, restriction: .none) }}
+    didSet { logLines = filterLog(level: messageLevel, restriction: restriction, restrictionText: restrictionText) }}
+  @Published var restriction : Restriction = .none {
+    didSet { logLines = filterLog(level: messageLevel, restriction: restriction, restrictionText: restrictionText) }}
+  @Published var restrictionText : String = "" {
+    didSet { logLines = filterLog(level: messageLevel, restriction: restriction, restrictionText: restrictionText) }}
+
   @Published var logLines = [Line]()
   
   // ----------------------------------------------------------------------------
@@ -96,6 +101,11 @@ public class LogData: ObservableObject {
   }
   
   private func filterLog(level: MessageLevel, restriction: Restriction, restrictionText: String = "") -> [Line] {
+
+
+    print("Restriction = \(restriction.rawValue), \(restrictionText)")
+
+
     var lines = [Line]()
     var limitedLines = [Line]()
     
@@ -108,10 +118,10 @@ public class LogData: ObservableObject {
     }
     
     switch restriction {
-    case .none:      limitedLines = lines
-    case .prefix:    limitedLines = lines.filter { $0.text.hasPrefix(restrictionText) }
-    case .includes:  limitedLines = lines.filter { $0.text.contains(restrictionText) }
-    case .excludes:  limitedLines = lines.filter { !$0.text.contains(restrictionText) }
+    case .none:       limitedLines = lines
+    case .prefix:     limitedLines = lines.filter { $0.text.contains(" > " + restrictionText) }
+    case .includes:   limitedLines = lines.filter { $0.text.contains(restrictionText) }
+    case .excludes:   limitedLines = lines.filter { !$0.text.contains(restrictionText) }
     }
     return limitedLines
   }

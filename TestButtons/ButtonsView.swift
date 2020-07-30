@@ -22,6 +22,17 @@ struct ButtonsView: View {
       .frame(width: 150, height: 20)
       .padding([.horizontal], 20)
       
+      Picker(selection: $data.restriction, label: Text("Restriction")) {
+        ForEach(LogData.Restriction.allCases, id: \.self) {
+          Text($0.rawValue)
+        }
+      }
+      .frame(width: 150, height: 20)
+
+      TextField("Enter restriction text", text: $data.restrictionText)
+        .background(Color(.gray))
+        .frame(width: 150, alignment: .leading)
+      
       Spacer()
       HStack {
         Button(action: {self.data.reload = true}) {Text("Load")}
