@@ -37,6 +37,7 @@ struct ButtonsView: View {
       HStack {
         Toggle("Show times", isOn: $data.showTimes)
           .frame(height: 20, alignment: .center)
+          .toggleStyle(SwitchToggleStyle())
         Spacer()
         Button(action: {self.data.reload = true}) {Text("Load")}
         Button(action: {self.data.save = true}) {Text("Save")}
