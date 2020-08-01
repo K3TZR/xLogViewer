@@ -19,7 +19,7 @@ struct ButtonsView: View {
           Text($0.rawValue)
         }
       }
-      .frame(width: 150, height: 20)
+      .frame(width: 150)
       .padding([.horizontal], 20)
       
       Picker(selection: $data.restriction, label: Text("Restriction")) {
@@ -27,7 +27,7 @@ struct ButtonsView: View {
           Text($0.rawValue)
         }
       }
-      .frame(width: 150, height: 20)
+      .frame(width: 150)
 
       TextField("Enter restriction text", text: $data.restrictionText)
         .background(Color(.gray))
@@ -36,7 +36,7 @@ struct ButtonsView: View {
       Spacer()
       HStack {
         Toggle("Show times", isOn: $data.showTimes)
-          .frame(height: 20, alignment: .center)
+          .frame(alignment: .center)
           .toggleStyle(SwitchToggleStyle())
         Spacer()
         Button(action: {self.data.reload = true}) {Text("Load")}
@@ -45,7 +45,7 @@ struct ButtonsView: View {
       .frame(width: 300)
       .padding([.horizontal], 20)
     }
-    .padding([.vertical], 10)
+    .padding(.bottom, 10)
   }
 }
 

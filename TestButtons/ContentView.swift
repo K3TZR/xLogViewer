@@ -15,7 +15,7 @@ struct ContentView: View {
     VStack {      
       LogView()
       ButtonsView()
-    }.frame(minWidth: 600, idealWidth: 1000, maxWidth: .infinity, minHeight: 200, idealHeight: 400, maxHeight: .infinity, alignment: .topLeading)
+    }.frame(minWidth: 900, idealWidth: 1200, maxWidth: .infinity, minHeight: 200, idealHeight: 400, maxHeight: .infinity, alignment: .center)
   }
 }
 
