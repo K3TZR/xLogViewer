@@ -20,14 +20,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		91CD083424CBCFCF0034F36A /* TestButtons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestButtons.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		91CD083424CBCFCF0034F36A /* xLogViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xLogViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CD083724CBCFCF0034F36A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91CD083924CBCFCF0034F36A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		91CD083B24CBCFD10034F36A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91CD083E24CBCFD10034F36A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91CD084124CBCFD10034F36A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91CD084324CBCFD10034F36A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91CD084424CBCFD10034F36A /* TestButtons.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestButtons.entitlements; sourceTree = "<group>"; };
+		91CD084424CBCFD10034F36A /* xLogViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = xLogViewer.entitlements; sourceTree = "<group>"; };
 		91CD084E24CC9D080034F36A /* LogData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogData.swift; sourceTree = "<group>"; };
 		91CD085024CC9DF60034F36A /* AppExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppExtensions.swift; sourceTree = "<group>"; };
 		91CD085724CDC6480034F36A /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		91CD082B24CBCFCF0034F36A = {
 			isa = PBXGroup;
 			children = (
-				91CD083624CBCFCF0034F36A /* TestButtons */,
+				91CD083624CBCFCF0034F36A /* xLogViewer */,
 				91CD083524CBCFCF0034F36A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,12 +57,12 @@
 		91CD083524CBCFCF0034F36A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				91CD083424CBCFCF0034F36A /* TestButtons.app */,
+				91CD083424CBCFCF0034F36A /* xLogViewer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		91CD083624CBCFCF0034F36A /* TestButtons */ = {
+		91CD083624CBCFCF0034F36A /* xLogViewer */ = {
 			isa = PBXGroup;
 			children = (
 				91CD085624CDBEEF0034F36A /* Model */,
@@ -74,10 +74,10 @@
 				91CD083B24CBCFD10034F36A /* Assets.xcassets */,
 				91CD084024CBCFD10034F36A /* Main.storyboard */,
 				91CD084324CBCFD10034F36A /* Info.plist */,
-				91CD084424CBCFD10034F36A /* TestButtons.entitlements */,
+				91CD084424CBCFD10034F36A /* xLogViewer.entitlements */,
 				91CD083D24CBCFD10034F36A /* Preview Content */,
 			);
-			path = TestButtons;
+			path = xLogViewer;
 			sourceTree = "<group>";
 		};
 		91CD083D24CBCFD10034F36A /* Preview Content */ = {
@@ -100,9 +100,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		91CD083324CBCFCF0034F36A /* TestButtons */ = {
+		91CD083324CBCFCF0034F36A /* xLogViewer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 91CD084724CBCFD10034F36A /* Build configuration list for PBXNativeTarget "TestButtons" */;
+			buildConfigurationList = 91CD084724CBCFD10034F36A /* Build configuration list for PBXNativeTarget "xLogViewer" */;
 			buildPhases = (
 				91CD083024CBCFCF0034F36A /* Sources */,
 				91CD083124CBCFCF0034F36A /* Frameworks */,
@@ -112,9 +112,9 @@
 			);
 			dependencies = (
 			);
-			name = TestButtons;
+			name = xLogViewer;
 			productName = TestButtons;
-			productReference = 91CD083424CBCFCF0034F36A /* TestButtons.app */;
+			productReference = 91CD083424CBCFCF0034F36A /* xLogViewer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -132,7 +132,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 91CD082F24CBCFCF0034F36A /* Build configuration list for PBXProject "TestButtons" */;
+			buildConfigurationList = 91CD082F24CBCFCF0034F36A /* Build configuration list for PBXProject "xLogViewer" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -145,7 +145,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				91CD083324CBCFCF0034F36A /* TestButtons */,
+				91CD083324CBCFCF0034F36A /* xLogViewer */,
 			);
 		};
 /* End PBXProject section */
@@ -311,21 +311,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = TestButtons/TestButtons.entitlements;
+				CODE_SIGN_ENTITLEMENTS = xLogViewer/xLogViewer.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"TestButtons/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"xLogViewer/Preview Content\"";
 				DEVELOPMENT_TEAM = EE5B8TYXGA;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = TestButtons/Info.plist;
+				INFOPLIST_FILE = xLogViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = net.k3tzr.TestButtons;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.k3tzr.xLogViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -335,21 +336,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = TestButtons/TestButtons.entitlements;
+				CODE_SIGN_ENTITLEMENTS = xLogViewer/xLogViewer.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"TestButtons/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"xLogViewer/Preview Content\"";
 				DEVELOPMENT_TEAM = EE5B8TYXGA;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = TestButtons/Info.plist;
+				INFOPLIST_FILE = xLogViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = net.k3tzr.TestButtons;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.k3tzr.xLogViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -358,7 +360,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		91CD082F24CBCFCF0034F36A /* Build configuration list for PBXProject "TestButtons" */ = {
+		91CD082F24CBCFCF0034F36A /* Build configuration list for PBXProject "xLogViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				91CD084524CBCFD10034F36A /* Debug */,
@@ -367,7 +369,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		91CD084724CBCFD10034F36A /* Build configuration list for PBXNativeTarget "TestButtons" */ = {
+		91CD084724CBCFD10034F36A /* Build configuration list for PBXNativeTarget "xLogViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				91CD084824CBCFD10034F36A /* Debug */,
